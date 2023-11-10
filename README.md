@@ -33,7 +33,7 @@ To get started with this project. Refer to the docs here: https://appbuilder.ago
 ## 🚀 Deployment <a name = "deployment"></a>
 
 ### 1 Click Deployment Using Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/AgoraIO/app-builder-backend)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nyhk-oi/app-builder-backend)
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [PostgreSQL](https://www.postgresql.org/) - Database
