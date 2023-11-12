@@ -113,10 +113,10 @@ func (r *mutationResolver) CreateChannel(ctx context.Context, title string, back
 
 	newChannel = &models.Channel{
 		Title:            title,
-		ChannelName:      channel,
+		ChannelName:      title,
 		ChannelSecret:    secret,
 		HostPassphrase:   hostPhrase,
-		ViewerPassphrase: viewPhrase,
+		ViewerPassphrase: title,
 		DTMF:             *dtmfResult,
 	}
 
@@ -133,7 +133,7 @@ func (r *mutationResolver) CreateChannel(ctx context.Context, title string, back
 			View: viewPhrase,
 		},
 		Title:   title,
-		Channel: channel,
+		Channel: title,
 		Pstn:    pstnResponse,
 	}, nil
 }
