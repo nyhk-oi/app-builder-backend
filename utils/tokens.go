@@ -79,7 +79,7 @@ func GenerateUserCredentialsForScreenShare(channel string, rtm bool, pstn bool) 
 	if pstn {
 		uid = initialUID + 100000000
 	} else {
-		uid = initialUID + 200000000
+		uid = initialUID
 	}
 
 	rtcToken, err := GetRtcToken(channel, uid)
