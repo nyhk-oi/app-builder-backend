@@ -72,3 +72,36 @@ func GenerateUserCredentials(channel string, rtm bool, pstn bool) (*models.UserC
 		UID: uid,
 	}, nil
 }
+
+func GenerateUserCredentialsForScreenShare(channel string, rtm bool, pstn bool) (*models.UserCredentials, error) {
+	initialUID := RandomRange(10000, 20000)
+	var uid int
+	if pstn {
+		uid = initialUID + 100000000
+	} else {
+		uid = initialUID + 200000000
+	}
+
+	rtcToken, err := GetRtcToken(channel, uid)
+	if err != nil {
+		return nil, err
+	}
+
+	if !rtm {
+		return &models.UserCredentials{
+			Rtc: rtcToken,
+			UID: uid,
+		}, nil
+	}
+
+	rtmToken, err := GetRtmToken(fmt.Sprint(uid))
+	if err != nil {
+		return nil, err
+	}
+
+	return &models.UserCredentials{
+		Rtc: rtcToken,
+		Rtm: &rtmToken,
+		UID: uid,
+	}, nil
+}

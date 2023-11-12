@@ -471,7 +471,7 @@ func (r *queryResolver) JoinChannel(ctx context.Context, passphrase string) (*mo
 		return nil, errInternalServer
 	}
 
-	screenShare, err := utils.GenerateUserCredentials(channelData.ChannelName, false, false)
+	screenShare, err := utils.GenerateUserCredentialsForScreenShare(channelData.ChannelName, false, false)
 	if err != nil {
 		r.Logger.Error().Err(err).Msg("Could not generate screenshare user credentails")
 		return nil, errInternalServer
